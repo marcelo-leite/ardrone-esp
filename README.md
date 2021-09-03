@@ -109,12 +109,8 @@ Add additional notes about how to deploy this on a live system.
 
 See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-
 ## 🎉 References <a name = "acknowledgement"></a>
 - References
+- [@Nolan Moore](https://github.com/nolanmoore/esp-ar-drone)
 
 
