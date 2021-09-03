@@ -1,0 +1,31 @@
+{
+    "name": "ardrone-esp",
+    "version": "1.0.0",
+    "description": "API for communication with platform Arduino ESP8266 and ARDrone v2.0. (Adaptation ArdroneLib SDK)",
+    "keywords": "api, arduino-library, ardrone",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/marcelo-leite/ardrone-esp.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Marcelo Leite",
+        "email": "leite_marcelo@outlook.com",
+        "url": "https://github.com/marcelo-leite"
+      },
+      {
+        "name": "Selmo Eduardo",
+        "email": "selmo.junior@ifma.edu.br",
+        "url": "https://github.com/selmoeduardo"
+      }
+    ],
+    "license": "BSD-3",
+    "dependencies": {
+
+    },
+    "frameworks": "arduino",
+    "platforms": "espressif8266"
+  }
+  
