@@ -110,8 +110,7 @@ Add additional notes about how to deploy this on a live system.
 See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
 ## 🎉 References <a name = "acknowledgement"></a>
-- References
-- [@ESP-AR-DRONE](https://github.com/nolanmoore/esp-ar-drone) - Firmware for the ESP8266 to control a Parrot AR Drone by Nolan Moore.
-- [@NODE-AR-DRONE](https://github.com/felixge/node-ar-drone) - A node.js client for controlling Parrot AR Drone 2.0 quad-copters by Felix Geisendörfer 
+- [@ESP-AR-DRONE](https://github.com/nolanmoore/esp-ar-drone) - Firmware for the ESP8266 to control a Parrot AR Drone by **Nolan Moore**.
+- [@NODE-AR-DRONE](https://github.com/felixge/node-ar-drone) - A node.js client for controlling Parrot AR Drone 2.0 quad-copters by **Felix Geisendörfer**
 
 
