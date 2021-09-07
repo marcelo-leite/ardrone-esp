@@ -83,7 +83,7 @@ Add notes about how to use the system.
 - [@Selmo Eduardo](https://github.com/selmoeduardo) - MSc Electrical Engineering
 
 ## 🎉 References <a name = "acknowledgement"></a>
-- [@ESP-AR-DRONE](https://github.com/nolanmoore/esp-ar-drone) - Firmware for the ESP8266 to control a Parrot AR Drone by **Nolan Moore**.
-- [@NODE-AR-DRONE](https://github.com/felixge/node-ar-drone) - A node.js client for controlling Parrot AR Drone 2.0 quad-copters by **Felix Geisendörfer**
+- [@ESP-AR-DRONE](https://github.com/nolanmoore/esp-ar-drone) - Firmware for the ESP8266 to control a Parrot AR Drone by **[Nolan Moore](https://github.com/nolanmoore)**.
+- [@NODE-AR-DRONE](https://github.com/felixge/node-ar-drone) - A node.js client for controlling Parrot AR Drone 2.0 quad-copters by **[Felix Geisendörfer](https://github.com/felixge)**
 
 
