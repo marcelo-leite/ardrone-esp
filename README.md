@@ -8,9 +8,10 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/marcelo-leite/ardrone-control/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+<!-- [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/marcelo-leite/ardrone-control/issues) -->
+<!-- [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls) -->
+
 
 </div>
 
@@ -24,10 +25,8 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Author](#author)
 - [Mentor](#mentor)
@@ -67,33 +66,9 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo.
 
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## 🎈 Usage <a name="usage"></a>
 
 Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -102,19 +77,13 @@ Add additional notes about how to deploy this on a live system.
 
 ## ✍️ Author <a name = "author"></a>
 
-- [@Marcelo-Leite](https://github.com/marcelo-leite) - Electrical Engineering Student
+- [@Marcelo Leite](https://github.com/marcelo-leite) - Electrical Engineering Student
 
 ## 👨‍🏫 Mentor <a name = "mentor"></a>
-- [@Selmo-Eduardo](https://github.com/selmoeduardo) - MSc Electrical Engineering
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
+- [@Selmo Eduardo](https://github.com/selmoeduardo) - MSc Electrical Engineering
 
 ## 🎉 References <a name = "acknowledgement"></a>
-- References
+- [@ESP-AR-DRONE](https://github.com/nolanmoore/esp-ar-drone) - Firmware for the ESP8266 to control a Parrot AR Drone by **[Nolan Moore](https://github.com/nolanmoore)**.
+- [@NODE-AR-DRONE](https://github.com/felixge/node-ar-drone) - A node.js client for controlling Parrot AR Drone 2.0 quad-copters by **[Felix Geisendörfer](https://github.com/felixge)**
 
 
