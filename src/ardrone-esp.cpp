@@ -1,4 +1,5 @@
 #include <ardrone-esp.h>
+#include <math.h>
 
 //ArdroneESP Contructor
 ArdroneESP::ArdroneESP(void){
@@ -80,7 +81,6 @@ void ArdroneESP::sendPacket(String command){
 
 //Function Member 
 void ArdroneESP::captureNavdata(void){
-  uint32_t nbsat;
   this->navdata.head = *((int32_t*)&this->incoming[0]);
   this->navdata.ardrone_state = *((int32_t*)&this->incoming[4]);
   this->navdata.sequence = *((int32_t*)&this->incoming[8]);
@@ -91,7 +91,7 @@ void ArdroneESP::captureNavdata(void){
   if(this->NavUdp.parsePacket()) {
     this->lReceive = millis();
     len = this->NavUdp.read(this->incoming, 4096); 
-    }
+  }
   this->navdata.id = (uint16_t*)&this->incoming[16];
   this->navdata.siz = (uint16_t*)&this->incoming[18];
   
@@ -212,7 +212,7 @@ void ArdroneESP::captureNavdata(void){
   this->ardata.fligth_data.v.z = this->navdata.block.navdata_demo.vz;
   
   this->ardata.fligth_data.phys_accs = this->navdata.block.navdata_phys_measures.phys_accs;
-  this->ardata.fligth_data.phys_gyros = this->navdata.block.navdata_phys_measures.phys_gyros;
+  this->ardata.fligth_data.magneto_raw = this->navdata.block.navdata_magneto.magneto_raw;
   
   this->ardata.fligth_data.wind_speed = this->navdata.block.navdata_wind_speed.wind_speed;
   this->ardata.fligth_data.wind_angle = this->navdata.block.navdata_wind_speed.wind_angle;
@@ -335,53 +335,77 @@ void ArdroneESP::emergency(void){
   this->refCommand(false, true);
 }
 
+//Function Member
 void ArdroneESP::showNavdata(void){
       
-  Serial.print("Sinal Wifi:\t");
-  Serial.print(this->navdata.block.navdata_wifi.link_quality);
-  Serial.print("\n");
+  // Serial.print("Sinal Wifi:\t");
+  // Serial.print(this->navdata.block.navdata_wifi.link_quality);
+  // Serial.print("\n");
   
-  Serial.print("Estado:\t");
-  Serial.print(this->navdata.block.navdata_demo.ctrl_state);
-  Serial.print("\n");
+  // Serial.print("Estado:\t");
+  // Serial.print(this->navdata.block.navdata_demo.ctrl_state);
+  // Serial.print("\n");
 
-  Serial.print("Altitude Relativa:\t");
-  Serial.print(this->navdata.block.navdata_demo.altitude);
-  Serial.print("\n");
+  // Serial.print("Altitude Relativa:\t");
+  // Serial.print(this->navdata.block.navdata_demo.altitude);
+  // Serial.print("\n");
 
-  Serial.print("Sequencia:\t");
-  Serial.print(navdata.sequence);
-  Serial.print("\n");
+  // Serial.print("Sequencia:\t");
+  // Serial.print(navdata.sequence);
+  // Serial.print("\n");
   
-  Serial.print("Nivel Bateria:\t");
-  Serial.print(this->navdata.block.navdata_demo.baterry);
-  Serial.print("\n");
+  // Serial.print("Nivel Bateria:\t");
+  // Serial.print(this->navdata.block.navdata_demo.baterry);
+  // Serial.print("\n");
   
-  Serial.print("Pressão:\t");  
-  Serial.print(this->navdata.block.navdata_pressure_raw.pression_meas);
-  Serial.print("\n"); 
+  // Serial.print("Pressão:\t");  
+  // Serial.print(this->navdata.block.navdata_pressure_raw.pression_meas);
+  // Serial.print("\n"); 
 
-  Serial.print("Latitude:\t");
-  Serial.print(this->navdata.block.navdata_gps.latitude, 8);
-  Serial.print("\n");
+  // Serial.print("Latitude:\t");
+  // Serial.print(this->navdata.block.navdata_gps.latitude, 8);
+  // Serial.print("\n");
   
-  Serial.print("Longitude:\t");
-  Serial.print(this->navdata.block.navdata_gps.longitude, 8);
-  Serial.print("\n");
+  // Serial.print("Longitude:\t");
+  // Serial.print(this->navdata.block.navdata_gps.longitude, 8);
+  // Serial.print("\n");
   
-  Serial.print("Elevação:\t");
-  Serial.print(this->navdata.block.navdata_gps.elevation, 8);
-  Serial.print("\n");
+  // Serial.print("Elevação:\t");
+  // Serial.print(this->navdata.block.navdata_gps.elevation, 8);
+  // Serial.print("\n");
   
-  Serial.print("Numero de Satelites:\t");
-  Serial.print(this->navdata.block.navdata_gps.nbsat);
-  Serial.print("\n\n\n");
+  // Serial.print("Numero de Satelites:\t");
+  // Serial.print(this->navdata.block.navdata_gps.nbsat);
+  // Serial.print("\n");
 
-
-  // Serial.print("Magnometro:\n");
-  // Serial.println(this->navdata.block.navdata_magneto.mx);
+  Serial.print("Magnometro:\n");
+  // Serial.println(this->navdatfortrana.block.navdata_magneto.mx);
   // Serial.println(this->navdata.block.navdata_magneto.my);
   // Serial.println(this->navdata.block.navdata_magneto.mz);
-  // Serial.print("\n");
+  Serial.println(this->navdata.block.navdata_magneto.magneto_raw.x);
+  Serial.println(this->navdata.block.navdata_magneto.magneto_raw.y);
+  Serial.println(this->navdata.block.navdata_magneto.magneto_raw.z);
+  float angle[2];
+  angle[0] = atan2(this->navdata.block.navdata_magneto.my,this->navdata.block.navdata_magneto.mx)*4068.0/71.0;
+  angle[1] = atan2(this->navdata.block.navdata_magneto.magneto_raw.y,this->navdata.block.navdata_magneto.magneto_raw.x)*4068.0/71.0;
+  Serial.print("Angle Compass:\n");
+  Serial.println(angle[0]);
+  Serial.println(angle[1]);
+  // Serial.print("Magnometro Heading:\n");
+  // Serial.println(this->navdata.block.navdata_magneto.heading_unwrapped);
+  // Serial.print("Magnometro Heading Gyro:\n");
+  // Serial.println(this->navdata.block.navdata_magneto.heading_gyro_unwrapped);
+  // Serial.print("Magnometro Heading Fusion:\n");
+  // Serial.println(this->navdata.block.navdata_magneto.heading_fusion_unwrapped);
+  // Serial.print("Magnometro Heading Fusion:\n");
+
+
+  Serial.print("\n");
+
+  // Serial.print("Acelerometro:\n");
+  // Serial.println(this->navdata.block.navdata_phys_measures.phys_accs.x);
+  // Serial.println(this->navdata.block.navdata_phys_measures.phys_accs.y);
+  // Serial.println(this->navdata.block.navdata_phys_measures.phys_accs.z);
+  // Serial.print("\n\n");
   
 }

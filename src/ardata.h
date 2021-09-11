@@ -25,7 +25,8 @@ typedef struct {
   
 
     vector31_t   phys_accs;
-    vector31_t   phys_gyros;
+    vector31_t   magneto_raw;
+    
 
     float wind_speed;			// estimated wind speed [m/s]
     float wind_angle;	
@@ -48,7 +49,7 @@ typedef struct {
     char    signature[7];
     fligth_data_t fligth_data;
     // navdata_demo_t* demo;
-    PaVE_t pave;
+    // PaVE_t pave;
     
 
 
